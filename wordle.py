@@ -1,4 +1,7 @@
-word = "fault"
+import random
+
+word_list = ["great","harpy","grand","break","alike","audio"]
+word = random.choice(word_list)
 
 # color for printing
 default = '\033[0m'
@@ -7,6 +10,7 @@ yellow = '\033[33m'
 
 def generate_hint(guess):
     color = default
+    hint = ""
     for i in range(5):
         if (guess[i]==word[i]):
             color = green
@@ -26,4 +30,3 @@ def game_loop():
             print("congratulations")
             break
 game_loop()
-
